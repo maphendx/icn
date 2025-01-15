@@ -1,101 +1,141 @@
-import Image from "next/image";
+'use client'
+import Head from 'next/head'
+import Link from 'next/link'
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="bg-white text-gray-900">
+      <Head>
+        <title>Interactive Coding Narratives</title>
+        <meta
+          name="description"
+          content="Learn coding through interactive storytelling."
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* Header */}
+      <header className="bg-white shadow">
+        <div className="container mx-auto flex justify-between items-center px-4 py-3">
+          <div className="flex items-center space-x-4">
+            <Link href="/" className="text-xl font-bold text-gray-800">
+              ICN
+            </Link>
+            <nav className="hidden md:flex space-x-4">
+              <Link
+                href="/products"
+                className="text-gray-700 hover:text-gray-900"
+              >
+                Products
+              </Link>
+              <Link
+                href="/resources"
+                className="text-gray-700 hover:text-gray-900"
+              >
+                Resources
+              </Link>
+              <Link
+                href="/solutions"
+                className="text-gray-700 hover:text-gray-900"
+              >
+                Solutions
+              </Link>
+              <Link
+                href="/company"
+                className="text-gray-700 hover:text-gray-900"
+              >
+                Company
+              </Link>
+              <Link
+                href="/pricing"
+                className="text-gray-700 hover:text-gray-900"
+              >
+                Pricing
+              </Link>
+            </nav>
+          </div>
+          <div className="flex items-center space-x-4">
+            <Link href="/support" className="text-gray-700 hover:text-gray-900">
+              Support
+            </Link>
+            <Link href="/sign-in" className="text-gray-700 hover:text-gray-900">
+              Sign In
+            </Link>
+            <Link
+              href="/sign-up"
+              className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+            >
+              Try Free
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-12 text-center">
+        <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+          Loved by developers.
+          <br />
+          Built for{' '}
+          <span className="bg-green-100 text-green-600 px-2 py-1 rounded">
+            Graph Data
+          </span>
+        </h1>
+        <p className="text-lg mb-8 text-gray-600">
+          You don’t need a separate database to support transactions, rich
+          search, or gen AI. The world’s most popular document database is now
+          the world’s most versatile developer data platform.
+        </p>
+        <div className="flex justify-center space-x-4 mb-12">
+          <Link
+            href="/sign-up"
+            className="px-6 py-3 bg-green-500 text-white rounded hover:bg-green-600"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Try ICN Free
+          </Link>
+          <Link
+            href="/learn-more"
+            className="px-6 py-3 border border-green-500 text-green-600 rounded hover:bg-green-100"
           >
-            Read our docs
-          </a>
+            Learn more
+          </Link>
+        </div>
+
+        {/* Statistics Section */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12 text-gray-600">
+          <div>52K+ Customers</div>
+          <div>115+ Regions across AWS, Azure, and Google Cloud</div>
+          <div>175K+ Developers join every month</div>
+          <div>#1 Most used mod database</div>
+        </div>
+
+        {/* Features Section */}
+        <div className="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
+          <div className="md:w-1/3">
+            <h2 className="text-2xl font-medium mb-4">Engaging Storylines</h2>
+            <p className="text-gray-600">
+              Experience thrilling narratives that keep you hooked.
+            </p>
+          </div>
+          <div className="md:w-1/3">
+            <h2 className="text-2xl font-medium mb-4">
+              Interactive Challenges
+            </h2>
+            <p className="text-gray-600">
+              Solve real-world coding problems in an interactive environment.
+            </p>
+          </div>
+          <div className="md:w-1/3">
+            <h2 className="text-2xl font-medium mb-4">Progress Tracking</h2>
+            <p className="text-gray-600">
+              Track your progress and see how far you've come in your coding
+              journey.
+            </p>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
-  );
+  )
 }
+
+export default Home
